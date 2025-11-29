@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Transillumination placeholder">
+  <rect width="100%" height="100%" fill="#f3fdfc"/>
+  <g transform="translate(40,30)">
+    <rect width="320" height="240" rx="14" fill="#e6fbf8" stroke="#bfeee6"/>
+    <ellipse cx="160" cy="120" rx="80" ry="110" fill="#ffffff"/>
+    <ellipse cx="160" cy="110" rx="60" ry="90" fill="#9be7db" opacity="0.6"/>
+    <circle cx="160" cy="95" r="8" fill="#052f2f" opacity="0.08"/>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Close-up placeholder">
+  <rect width="100%" height="100%" fill="#fbfffe"/>
+  <g transform="translate(40,30)">
+    <rect width="320" height="240" rx="14" fill="#ffffff" stroke="#e6fbf8"/>
+    <circle cx="160" cy="120" r="70" fill="#9be7db" opacity="0.75"/>
+    <circle cx="140" cy="105" r="8" fill="#052f2f" opacity="0.08"/>
+  </g>
+</svg>

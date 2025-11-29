@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Reflectance placeholder">
+  <rect width="100%" height="100%" fill="#f8fffe"/>
+  <g transform="translate(40,30)">
+    <rect width="320" height="240" rx="14" fill="#f0fffb" stroke="#cff7ec"/>
+    <rect x="110" y="80" width="180" height="40" rx="10" fill="#c7f9ee"/>
+    <path d="M60 200c40-60 160-60 240-20" stroke="#0f766e" stroke-opacity="0.08" stroke-width="22" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
