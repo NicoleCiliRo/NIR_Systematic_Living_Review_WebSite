@@ -4,19 +4,24 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Living Systematic Review — Updates</title>
-    <meta name="description" content="Repository and updates for the Living Systematic Review (LSR)." />
+    <title>Near-Infrared for Caries Detection — Living Systematic Review</title>
+    <meta name="description" content="Living systematic review of near-infrared imaging for caries detection." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aptos:wght@300;400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #f6fbfb;
+            --bg: #e8f4f8;
             --card: #ffffff;
-            --accent: #0f766e;
-            /* teal */
-            --muted: #6b7280;
-            --glass: rgba(255, 255, 255, 0.6);
+            --accent: #1a5276;
+            /* dark blue */
+            --accent-light: #5dade2;
+            /* light blue */
+            --muted: #555;
+            --glass: rgba(255, 255, 255, 0.7);
             --radius: 12px;
-            --max: 1100px;
-            font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            --max: 1200px;
+            font-family: 'Aptos', -apple-system, system-ui, sans-serif;
         }
 
         * {
@@ -25,156 +30,244 @@
 
         body {
             margin: 0;
-            background: linear-gradient(180deg, var(--bg), #eef7f7);
-            color: #052f2f
+            background: linear-gradient(180deg, var(--bg), #d0e8f2);
+            color: #1a1a1a;
+            line-height: 1.6
         }
 
         .wrap {
             max-width: var(--max);
-            margin: 32px auto;
+            margin: 0 auto;
             padding: 24px
         }
 
         header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px
-        }
-
-        .logo {
-            width: 56px;
-            height: 56px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, var(--accent), #6ee7b7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
             color: white;
-            font-weight: 700;
-            font-size: 18px
+            padding: 40px 24px;
+            text-align: center;
+            border-radius: 0 0 12px 12px
         }
 
-        h1 {
+        h1.page-title {
             margin: 0;
-            font-size: 1.5rem
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 0.5px
         }
 
-        p.lead {
-            margin: 4px 0 0;
-            color: var(--muted)
+        p.abstract {
+            margin: 12px 0 0;
+            font-size: 1rem;
+            font-weight: 300;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 16px;
+            flex-wrap: wrap
         }
 
         nav a {
-            color: var(--accent);
+            color: white;
             text-decoration: none;
-            margin-left: 16px;
-            font-weight: 600
+            font-weight: 400;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s
+        }
+
+        nav a:hover {
+            border-bottom-color: white
         }
 
         main {
-            display: grid;
-            grid-template-columns: 1fr 360px;
-            gap: 20px;
-            margin-top: 22px
-        }
-
-        @media (max-width:900px) {
-            main {
-                grid-template-columns: 1fr
-            }
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-top: 24px
         }
 
         .card {
             background: var(--card);
             border-radius: var(--radius);
-            padding: 18px;
-            box-shadow: 0 6px 18px rgba(15, 118, 110, 0.06)
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(26, 82, 118, 0.1)
         }
 
-        .hero {
-            display: flex;
+        h2 {
+            color: var(--accent);
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin: 0 0 16px 0;
+            border-bottom: 3px solid var(--accent-light);
+            padding-bottom: 8px
+        }
+
+        h3 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin: 16px 0 8px 0
+        }
+
+        p {
+            color: var(--muted);
+            font-weight: 300;
+            margin: 8px 0
+        }
+
+        .nir-definition {
+            background: linear-gradient(135deg, rgba(93, 173, 226, 0.08), rgba(26, 82, 118, 0.04));
+            padding: 20px;
+            border-left: 4px solid var(--accent-light);
+            border-radius: 8px;
+            margin-bottom: 16px
+        }
+
+        .nir-types {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 16px;
-            align-items: center
+            margin-top: 16px
         }
 
-        .hero-figure {
-            flex: 0 0 160px
+        .nir-type {
+            background: rgba(93, 173, 226, 0.05);
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-light)
         }
 
-        .hero-figure svg {
-            width: 160px;
-            height: 120px;
-            border-radius: 10px;
-            display: block
+        .nir-type h4 {
+            color: var(--accent);
+            margin: 0 0 8px 0;
+            font-weight: 400;
+            font-size: 1.05rem
         }
 
-        .section-title {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 12px
+        .nir-type p {
+            margin: 0;
+            font-size: 0.95rem
         }
 
-        .muted {
-            color: var(--muted)
+        @media (max-width: 700px) {
+            .nir-types {
+                grid-template-columns: 1fr
+            }
         }
 
-        .updates-list {
+        .findings-list {
             list-style: none;
             padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 10px
+            margin: 0
         }
 
-        .update {
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid #eef6f5;
-            background: linear-gradient(180deg, var(--glass), transparent)
+        .finding {
+            padding: 16px;
+            margin-bottom: 12px;
+            background: rgba(93, 173, 226, 0.04);
+            border-left: 4px solid var(--accent-light);
+            border-radius: 6px
+        }
+
+        .finding-date {
+            color: var(--accent);
+            font-weight: 400;
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 4px
+        }
+
+        .finding-title {
+            color: var(--accent);
+            font-weight: 400;
+            display: block;
+            margin-bottom: 8px
+        }
+
+        .finding-body {
+            color: var(--muted);
+            font-size: 0.95rem;
+            font-weight: 300
         }
 
         .images-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px
-        }
-
-        @media (max-width:600px) {
-            .images-grid {
-                grid-template-columns: repeat(2, 1fr)
-            }
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            margin-top: 16px
         }
 
         figure {
-            margin: 0
+            margin: 0;
+            text-align: center
         }
 
         figcaption {
             font-size: 0.85rem;
+            color: var(--accent);
+            margin-top: 8px;
+            font-weight: 400
+        }
+
+        figure img,
+        figure svg {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(26, 82, 118, 0.1)
+        }
+
+        .authors-list {
+            list-style: none;
+            padding: 0;
+            margin: 0
+        }
+
+        .author {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee
+        }
+
+        .author:last-child {
+            border-bottom: none
+        }
+
+        .author-name {
+            color: var(--accent);
+            font-weight: 400;
+            display: block
+        }
+
+        .author-dept {
             color: var(--muted);
-            margin-top: 6px
+            font-size: 0.9rem;
+            font-weight: 300
         }
 
         footer {
-            margin-top: 22px;
+            margin-top: 32px;
             color: var(--muted);
             font-size: 0.9rem;
-            text-align: center
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(93, 173, 226, 0.2)
         }
 
         .placeholder-note {
             font-size: 0.9rem;
-            color: var(--muted);
-            margin-top: 8px
+            color: var(--accent);
+            background: rgba(93, 173, 226, 0.1);
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 12px;
+            border-left: 3px solid var(--accent-light)
         }
 
         .btn {
@@ -182,180 +275,225 @@
             background: var(--accent);
             color: white;
             padding: 8px 12px;
-            border-radius: 8px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: 600
+            font-weight: 400
+        }
+
+        .btn:hover {
+            background: var(--accent-light)
         }
     </style>
 </head>
 
 <body>
+    <header>
+        <h1 class="page-title">Near-Infrared for Caries Detection</h1>
+        <p class="abstract">This website is a living systematic review bringing together the latest evidence from in
+            vitro and in vivo near-infrared studies for caries detection. This website is where all the updates
+            regarding the living systematic review will be made, including new studies and new meta analysis
+            evaluations.</p>
+        <nav>
+            <a href="#about">About NIR</a>
+            <a href="#findings">Summary of Findings</a>
+            <a href="#authors">Authors</a>
+        </nav>
+    </header>
+
     <div class="wrap">
-        <header>
-            <div class="brand">
-                <div class="logo">LSR</div>
-                <div>
-                    <h1>Living Systematic Review</h1>
-                    <p class="lead">Repository of updates and near-infrared dental imaging examples</p>
-                </div>
-            </div>
-            <nav>
-                <a href="#about">About</a>
-                <a href="#updates">Updates</a>
-                <a href="#images">Images</a>
-            </nav>
-        </header>
-
         <main>
-            <section>
-                <div class="card hero">
-                    <div>
-                        <div class="section-title">
-                            <h2 style="margin:0">About the review</h2>
-                            <span class="muted">Overview</span>
-                        </div>
-                        <p class="muted">(Leave this section blank for now — you'll add the systematic living review
-                            explanation here.)</p>
-                        <p class="placeholder-note">Tip: replace the paragraph above with your detailed description,
-                            objectives, inclusion criteria, and how you will update the review over time.</p>
-                    </div>
-                    <div class="hero-figure">
-                        <!-- Simple illustrative SVG representing near-infrared transillumination -->
-                        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" role="img"
-                            aria-label="NIR tooth illustration">
-                            <defs>
-                                <linearGradient id="g1" x1="0" x2="1">
-                                    <stop offset="0" stop-color="#9be7db" />
-                                    <stop offset="1" stop-color="#0f766e" />
-                                </linearGradient>
-                                <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
-                                    <feGaussianBlur stdDeviation="6" result="b" />
-                                    <feBlend in="SourceGraphic" in2="b" />
-                                </filter>
-                            </defs>
-                            <rect x="0" y="0" width="200" height="140" rx="12" fill="#052f2f" opacity="0.04" />
-                            <g transform="translate(20,10)">
-                                <ellipse cx="60" cy="60" rx="36" ry="50" fill="#fff" />
-                                <ellipse cx="62" cy="60" rx="28" ry="40" fill="url(#g1)" opacity="0.5"
-                                    filter="url(#soft)" />
-                                <circle cx="62" cy="55" r="6" fill="#052f2f" opacity="0.08" />
-                            </g>
-                        </svg>
-                    </div>
+
+            <!-- About NIR Section -->
+            <section id="about" class="card">
+                <h2>About Near-Infrared (NIR) Imaging</h2>
+                <div class="nir-definition">
+                    <p>Near-Infrared Imaging (NIR) for caries detection is a non-ionizing optical method that uses
+                        near-infrared light (~780–1700 nm) to visualize early enamel demineralization, especially in
+                        proximal surfaces where radiographs often fail to detect lesions. Sound enamel is highly
+                        translucent to NIR, while demineralized areas scatter the light, creating higher-contrast images
+                        of early lesions.</p>
                 </div>
 
-                <div id="updates" class="card" style="margin-top:16px">
-                    <div class="section-title">
-                        <h3 style="margin:0">Recent updates</h3>
-                        <a class="btn" href="#">New update</a>
+                <h3>Two Main Types of NIR Systems</h3>
+                <div class="nir-types">
+                    <div class="nir-type">
+                        <h4>NIR Transillumination</h4>
+                        <p>Light passes through the tooth and lesions appear as dark regions due to increased
+                            scattering.</p>
                     </div>
-                    <ul id="updates-list" class="updates-list">
-                        <li class="muted">Loading updates…</li>
-                    </ul>
+                    <div class="nir-type">
+                        <h4>NIR Reflectance</h4>
+                        <p>Light reflects off the enamel surface and demineralized areas appear brighter because they
+                            scatter more light back to the sensor.</p>
+                    </div>
                 </div>
             </section>
 
-            <aside>
-                <div class="card">
-                    <div class="section-title">
-                        <h3 style="margin:0">Images</h3>
-                        <span class="muted">Near-infrared examples</span>
-                    </div>
-                    <p class="muted">Below are placeholder images representing near-infrared transillumination and
-                        reflectance. Replace these SVGs with your real images (add into `images/` and update the
-                        <code>src</code> attributes).</p>
+            <!-- Summary of Findings Section -->
+            <section id="findings" class="card">
+                <h2>Summary of Findings</h2>
+                <p style="font-style: italic; color: var(--accent);">Meta-analyses conducted</p>
 
-                    <div id="images" class="images-grid" style="margin-top:12px">
-                        <figure>
-                            <!-- Transillumination placeholder -->
-                            <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <defs>
-                                    <linearGradient id="t1" x1="0" x2="1">
-                                        <stop offset="0" stop-color="#fff" />
-                                        <stop offset="1" stop-color="#9be7db" />
-                                    </linearGradient>
-                                </defs>
-                                <rect width="160" height="100" rx="8" fill="#052f2f" opacity="0.04" />
-                                <g transform="translate(16,8)">
-                                    <rect width="128" height="84" rx="6" fill="url(#t1)" opacity="0.95" />
-                                    <circle cx="32" cy="42" r="18" fill="#052f2f" opacity="0.08" />
-                                    <rect x="70" y="18" width="34" height="12" rx="6" fill="#052f2f" opacity="0.08" />
-                                </g>
-                            </svg>
-                            <figcaption>Transillumination — placeholder</figcaption>
-                        </figure>
+                <ul class="findings-list">
+                    <li class="finding">
+                        <span class="finding-date">2025-12-01</span>
+                        <span class="finding-title">Placeholder Meta-Analysis 1</span>
+                        <span class="finding-body">Add your meta-analysis title and details here.</span>
+                    </li>
+                    <li class="finding">
+                        <span class="finding-date">2025-12-10</span>
+                        <span class="finding-title">Placeholder Meta-Analysis 2</span>
+                        <span class="finding-body">Add your meta-analysis title and details here.</span>
+                    </li>
+                </ul>
 
-                        <figure>
-                            <!-- Reflectance placeholder -->
-                            <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <defs>
-                                    <linearGradient id="r1" x1="0" x2="1">
-                                        <stop offset="0" stop-color="#fff" />
-                                        <stop offset="1" stop-color="#c7f9ee" />
-                                    </linearGradient>
-                                </defs>
-                                <rect width="160" height="100" rx="8" fill="#052f2f" opacity="0.04" />
-                                <g transform="translate(16,8)">
-                                    <rect width="128" height="84" rx="6" fill="url(#r1)" />
-                                    <path d="M20 64c10-16 36-22 56-12" stroke="#052f2f" stroke-opacity="0.06"
-                                        stroke-width="10" fill="none" stroke-linecap="round" />
-                                </g>
-                            </svg>
-                            <figcaption>Reflectance — placeholder</figcaption>
-                        </figure>
-
-                        <figure>
-                            <!-- Close-up placeholder -->
-                            <svg viewBox="0 0 160 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <rect width="160" height="100" rx="8" fill="#052f2f" opacity="0.04" />
-                                <g transform="translate(24,8)">
-                                    <rect width="112" height="84" rx="6" fill="#fff" />
-                                    <circle cx="56" cy="42" r="28" fill="#9be7db" opacity="0.7" />
-                                </g>
-                            </svg>
-                            <figcaption>Close-up — placeholder</figcaption>
-                        </figure>
+                <h3>Meta-analysis images</h3>
+                <div id="meta-images" class="card" style="padding:12px">
+                    <div id="meta-images-grid" class="images-grid" aria-live="polite">
+                        <div class="muted">Looking for images in <code>meta-analyses/</code>…</div>
                     </div>
 
-                    <p style="margin-top:12px" class="muted">How to replace: add actual images to `images/` and swap the
-                        SVG elements for `<img src="images/yourfile.jpg" alt="...">`.</p>
+                    <div class="placeholder-note">
+                        <strong>Notes:</strong> Place your 7 images inside a folder named <code>meta-analyses/</code> at
+                        the repository root. The page will look for a <code>manifest.json</code> (array of filenames) in
+                        that folder first. If no manifest is present, it will try the pattern <code>image1.jpg</code> …
+                        <code>image7.jpg</code> and also attempt common extensions
+                        (<code>.jpg .jpeg .png .svg .webp</code>).
+                    </div>
                 </div>
-            </aside>
+            </section>
+
+            <!-- Authors Section -->
+            <section id="authors" class="card">
+                <h2>Authors</h2>
+                <ul class="authors-list">
+                    <li class="author">
+                        <span class="author-name">Nicole Rodrigues</span>
+                        <span class="author-dept">Department of Conservative Dentistry and Prosthodontics<br>Complutense
+                            University of Madrid, Spain</span>
+                    </li>
+                    <li class="author">
+                        <span class="author-name">Monica Bonfanti-Gris</span>
+                        <span class="author-dept">Department of Conservative Dentistry and Prosthodontics<br>Complutense
+                            University of Madrid, Spain</span>
+                    </li>
+                    <li class="author">
+                        <span class="author-name">Maria Paz Salido</span>
+                        <span class="author-dept">Department of Conservative Dentistry and Prosthodontics<br>Complutense
+                            University of Madrid, Spain</span>
+                    </li>
+                    <li class="author">
+                        <span class="author-name">Guillermo Pradies</span>
+                        <span class="author-dept">Department of Conservative Dentistry and Prosthodontics<br>Complutense
+                            University of Madrid, Spain</span>
+                    </li>
+                </ul>
+            </section>
+
         </main>
 
         <footer>
-            <div class="muted">Created for your Living Systematic Review — update contents as the project evolves.</div>
+            <div>Living Systematic Review — Near-Infrared for Caries Detection</div>
+            <div style="margin-top: 8px; font-size: 0.85rem;">Updates will be continuously added as new evidence
+                emerges.</div>
         </footer>
     </div>
-</body>
-<script>
-    // Load updates from updates.json and render into #updates-list
-    (async function () {
-        const listEl = document.getElementById('updates-list');
-        if (!listEl) return;
-        try {
-            const res = await fetch('updates.json');
-            if (!res.ok) throw new Error('HTTP ' + res.status);
-            const data = await res.json();
-            data.sort((a, b) => new Date(b.date) - new Date(a.date));
-            listEl.innerHTML = data.map(u => {
-                const date = escapeHtml(u.date);
-                const title = escapeHtml(u.title);
-                const body = u.body ? ' — ' + escapeHtml(u.body) : '';
-                return `<li class="update"><strong>${date}</strong> — ${title}${body}</li>`;
-            }).join('');
-        } catch (err) {
-            console.warn('Could not load updates.json:', err);
-            listEl.innerHTML = '<li class="update">Could not load <code>updates.json</code>. If you opened this file directly from the filesystem, run a local server (see README note) or add updates manually.</li>';
-        }
 
-        function escapeHtml(s) {
-            return String(s || '')
-                .replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;');
-        }
-    })();
-</script>
+    <script>
+        // Load updates from updates.json (optional enhancement for tracking review updates)
+        (async function () {
+            const listEl = document.getElementById('updates-list');
+            if (!listEl) return;
+            try {
+                const res = await fetch('updates.json');
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                const data = await res.json();
+                data.sort((a, b) => new Date(b.date) - new Date(a.date));
+                listEl.innerHTML = data.map(u => {
+                    const date = escapeHtml(u.date);
+                    const title = escapeHtml(u.title);
+                    const body = u.body ? ' — ' + escapeHtml(u.body) : '';
+                    return `<li class="update"><strong>${date}</strong> — ${title}${body}</li>`;
+                }).join('');
+            } catch (err) {
+                console.warn('Could not load updates.json:', err);
+            }
+
+            function escapeHtml(s) {
+                return String(s || '')
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;');
+            }
+        })();
+
+        // Load meta-analysis images from meta-analyses/ folder.
+        (async function loadMetaImages() {
+            const grid = document.getElementById('meta-images-grid');
+            if (!grid) return;
+            grid.innerHTML = '<div class="muted">Searching for images…</div>';
+
+            // Helper: render a single image figure
+            function renderImage(src, caption) {
+                const fig = document.createElement('figure');
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = caption || '';
+                const cap = document.createElement('figcaption');
+                cap.textContent = caption || src.split('/').pop();
+                fig.appendChild(img);
+                fig.appendChild(cap);
+                grid.appendChild(fig);
+            }
+
+            // Try to load manifest first: meta-analyses/manifest.json -> ["image1.jpg", ...]
+            try {
+                const m = await fetch('meta-analyses/manifest.json');
+                if (m.ok) {
+                    const list = await m.json();
+                    grid.innerHTML = '';
+                    for (const fname of list) {
+                        const path = `meta-analyses/${fname}`;
+                        try {
+                            const r = await fetch(path);
+                            if (r.ok) renderImage(path, fname);
+                        } catch (e) { /* ignore individual failures */ }
+                    }
+                    if (!grid.children.length) grid.innerHTML = '<div class="muted">No images found in manifest.</div>';
+                    return;
+                }
+            } catch (e) {
+                // manifest not found or invalid — fall through to pattern
+            }
+
+            // If no manifest, try a pattern: image1..image7 with common extensions
+            const exts = ['.jpg', '.jpeg', '.png', '.svg', '.webp'];
+            const found = [];
+            grid.innerHTML = '';
+            for (let i = 1; i <= 7; i++) {
+                let matched = false;
+                for (const ext of exts) {
+                    const path = `meta-analyses/image${i}${ext}`;
+                    try {
+                        const r = await fetch(path, { method: 'GET' });
+                        if (r.ok) {
+                            renderImage(path, `Image ${i}`);
+                            matched = true;
+                            found.push(path);
+                            break;
+                        }
+                    } catch (e) {
+                        // continue trying other extensions
+                    }
+                }
+                // continue to next index whether matched or not
+            }
+
+            if (!found.length) {
+                grid.innerHTML = '<div class="muted">No images found in <code>meta-analyses/</code>. Make sure you placed files named <code>image1.jpg</code> … <code>image7.jpg</code> (or update the <code>manifest.json</code> approach).</div>';
+            }
+        })();
+    </script>
+</body>
 
 </html>
